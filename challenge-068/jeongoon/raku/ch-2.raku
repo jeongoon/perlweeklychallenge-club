@@ -142,7 +142,7 @@ sub MAIN (
             ~ "Input: ";
         $input = prompt();
     }
-    $input //= $example-str;
+    $input ||= $example-str;
 
     my $sep = find-seprator-from-str( $input );
 
