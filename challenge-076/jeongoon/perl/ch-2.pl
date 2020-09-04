@@ -105,7 +105,7 @@ sub allTopRightToBottomLeftIndices ($$) {
               ( ($p <= $maxPos) and (($p % $lineLen) < $col) )
                 ? $p: ()
             } (map {$_*($lineLen-1)} 1 .. $col) ] }
-    ( 0 .. ($lineLen -1), map { $lineLen*$_ -1 } 2 .. $rowsIdx )
+    ( 0 .. ($lineLen -1), map { $lineLen*$_ -1 } 1 .. $rowsIdx )
 }
 
 sub allIndices ($$) { # summary of directions shown above
@@ -135,7 +135,7 @@ sub allSubsequencesIndices { # final summary of indices
       map { bothDirection @$_ } allIndices( $maxPos, $lineLen );
 }
 
-say scalar allSubsequencesIndices( 303, 16 );
+#say scalar allSubsequencesIndices( 303, 16 );
 
 sub genWordsOrganized {
     my ( $maxPos, $lineLen, $gridString ) = @_;
